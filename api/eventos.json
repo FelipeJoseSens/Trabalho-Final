@@ -1,0 +1,102 @@
+[
+  {
+    "id_evento": "EVT001",
+    "nome_evento": "Show da Banda Rock Nacional",
+    "data_evento": "2025-07-15T20:00:00Z",
+    "local_evento": "Estádio Municipal",
+    "cidade": "São Paulo",
+    "preco_minimo_ingresso": 75.00,
+    "categoria": "Música",
+    "banner_url": "banner_rock_nacional.png"
+  },
+  {
+    "id_evento": "EVT002",
+    "nome_evento": "Feira de Tecnologia e Inovação",
+    "data_evento": "2025-08-22T09:00:00Z",
+    "local_evento": "Centro de Convenções",
+    "cidade": "Rio de Janeiro",
+    "preco_minimo_ingresso": 30.00,
+    "categoria": "Tecnologia",
+    "banner_url": "banner_feira_tech.png"
+  },
+  {
+    "id_evento": "EVT003",
+    "nome_evento": "Festival de Cinema Independente",
+    "data_evento": "2025-09-05T18:00:00Z",
+    "local_evento": "Cine Arte",
+    "cidade": "Curitiba",
+    "preco_minimo_ingresso": 25.00,
+    "categoria": "Cinema",
+    "banner_url": "banner_cinema_indie.png"
+  },
+  {
+    "id_evento": "EVT004",
+    "nome_evento": "Stand-up Comedy: Noite de Risadas",
+    "data_evento": "2025-07-20T21:00:00Z",
+    "local_evento": "Teatro Central",
+    "cidade": "Belo Horizonte",
+    "preco_minimo_ingresso": 50.00,
+    "categoria": "Comédia",
+    "banner_url": "banner_standup.png"
+  },
+  {
+    "id_evento": "EVT005",
+    "nome_evento": "Maratona Geek",
+    "data_evento": "2025-10-12T08:00:00Z",
+    "local_evento": "Parque da Cidade",
+    "cidade": "Brasília",
+    "preco_minimo_ingresso": 15.00,
+    "categoria": "Esportes",
+    "banner_url": "banner_maratona.png"
+  },
+  {
+    "id_evento": "EVT006",
+    "nome_evento": "Exposição de Arte Moderna",
+    "data_evento": "2025-08-01T10:00:00Z",
+    "local_evento": "Museu de Arte Contemporânea",
+    "cidade": "Salvador",
+    "preco_minimo_ingresso": 20.00,
+    "categoria": "Arte",
+    "banner_url": "banner_arte_moderna.png"
+  },
+  {
+    "id_evento": "EVT007",
+    "nome_evento": "Concerto de Orquestra Sinfônica",
+    "data_evento": "2025-09-18T19:30:00Z",
+    "local_evento": "Sala de Concertos Principal",
+    "cidade": "Porto Alegre",
+    "preco_minimo_ingresso": 90.00,
+    "categoria": "Música Clássica",
+    "banner_url": "banner_sinfonica.png"
+  },
+  {
+    "id_evento": "EVT008",
+    "nome_evento": "Workshop de Culinária Italiana",
+    "data_evento": "2025-07-25T14:00:00Z",
+    "local_evento": "Espaço Gourmet",
+    "cidade": "Recife",
+    "preco_minimo_ingresso": 120.00,
+    "categoria": "Gastronomia",
+    "banner_url": "banner_culinaria.png"
+  },
+  {
+    "id_evento": "EVT009",
+    "nome_evento": "Peça Teatral: O Fantasma da Ópera",
+    "data_evento": "2025-11-10T20:00:00Z",
+    "local_evento": "Teatro Municipal",
+    "cidade": "São Paulo",
+    "preco_minimo_ingresso": 150.00,
+    "categoria": "Teatro",
+    "banner_url": "banner_fantasma_opera.png"
+  },
+  {
+    "id_evento": "EVT010",
+    "nome_evento": "Festa Junina Beneficente",
+    "data_evento": "2025-06-29T18:00:00Z",
+    "local_evento": "Praça Central",
+    "cidade": "Florianópolis",
+    "preco_minimo_ingresso": 10.00,
+    "categoria": "Comunitário",
+    "banner_url": "banner_festa_junina.png"
+  }
+]

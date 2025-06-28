@@ -1,0 +1,11 @@
+# Ambientes Virtuais e Caches Python
+venv/
+__pycache__/
+*.pyc
+
+# Arquivos do Terraform que não devem ser versionados
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.pem
