@@ -32,3 +32,6 @@ Este projeto é uma API RESTful para listar eventos com ingressos à venda, dese
 Para iniciar o servidor localmente na porta 8000, execute:
 ```bash
 uvicorn api.main:app --reload --port 8000
+
+
+"Projeto Finalizado.".
