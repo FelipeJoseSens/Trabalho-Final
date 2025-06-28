@@ -39,3 +39,5 @@ jobs:
       # Roda os testes com pytest
       - name: Executar testes com Pytest
         run: pytest
+        env:
+            PYTHONPATH: .
