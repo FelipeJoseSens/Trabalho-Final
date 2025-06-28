@@ -1,0 +1,71 @@
+# ansible/playbook.yml
+- name: Configurar Servidor e Fazer Deploy da API de Eventos
+  hosts: servidor_api
+  become: yes # Permite que o Ansible execute tarefas como superusuário (sudo)
+
+  tasks:
+    - name: Atualizar cache de pacotes apt
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600 # Atualiza o cache a cada hora
+
+    - name: Instalar dependencias do sistema (python3, pip, venv, git)
+      apt:
+        name:
+          - python3-pip
+          - python3-venv
+          - git
+        state: present
+      # [CITE: 71]
+
+    - name: Clonar o repositorio da API do GitHub
+      git:
+        repo: 'https://github.com/FelipeJoseSens/Trabalho-Final.git' # <-- SUBSTITUA PELA URL DO SEU REPOSITÓRIO
+        dest: /home/ubuntu/app-eventos
+        version: main
+        force: yes
+      become_user: ubuntu
+      # [CITE: 72]
+
+    - name: Criar ambiente virtual para a aplicacao
+      command: python3 -m venv /home/ubuntu/app-eventos/venv
+      args:
+        creates: /home/ubuntu/app-eventos/venv
+      become_user: ubuntu
+
+    - name: Instalar dependencias da aplicacao com pip
+      pip:
+        requirements: /home/ubuntu/app-eventos/requirements.txt
+        virtualenv: /home/ubuntu/app-eventos/venv
+      # [CITE: 73]
+
+    - name: Instalar Gunicorn no ambiente virtual
+      pip:
+        name: gunicorn
+        virtualenv: /home/ubuntu/app-eventos/venv
+
+    - name: Criar servico systemd para a API (para rodar em background)
+      copy:
+        dest: /etc/systemd/system/api-eventos.service
+        content: |
+          [Unit]
+          Description=Gunicorn instance para servir a API de Eventos
+          After=network.target
+
+          [Service]
+          User=ubuntu
+          Group=www-data
+          WorkingDirectory=/home/ubuntu/app-eventos
+          ExecStart=/home/ubuntu/app-eventos/venv/bin/gunicorn -w 4 -k uvicorn.workers.UvicornWorker -b 0.0.0.0:8000 api.main:app
+          Restart=always
+
+          [Install]
+          WantedBy=multi-user.target
+      # [CITE: 74]
+
+    - name: Recarregar daemons do systemd e iniciar a API
+      systemd:
+        name: api-eventos
+        state: restarted
+        enabled: yes
+        daemon_reload: yes
