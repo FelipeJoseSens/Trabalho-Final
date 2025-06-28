@@ -26,7 +26,7 @@ jobs:
       - name: Configurar Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: '3.11'
 
       # Etapa 3: Instalação das dependências
       # Instala as bibliotecas listadas no requirements.txt
